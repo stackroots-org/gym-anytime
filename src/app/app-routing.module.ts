@@ -9,6 +9,7 @@ import{LoginComponent} from './login/login.component'
 import{RegisterUserComponent} from './register-user/register-user.component'
 import {SloatCreationComponent} from './sloat-creation/sloat-creation.component'
 
+//new-addmission
 const routes: Routes = [{path:"",component:LoginComponent},{path:"bookings",component:BookingsComponent},{path:"customers",component:ListUserComponent},
 {path:"new-addmission",component:RegisterUserComponent},{path:"sloats",component:ListSloatsComponent},{path:"create-sloats",component:SloatCreationComponent}
 ,{path:"book-sloat",component:BookSloatComponent}];

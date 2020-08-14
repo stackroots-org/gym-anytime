@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import{FormsModule,ReactiveFormsModule} from '@angular/forms'
+import {HttpClientModule} from'@angular/common/http';
+
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +16,7 @@ import { SloatCreationComponent } from './sloat-creation/sloat-creation.componen
 import { ListSloatsComponent } from './list-sloats/list-sloats.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { BookSloatComponent } from './book-sloat/book-sloat.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +32,10 @@ import { BookSloatComponent } from './book-sloat/book-sloat.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

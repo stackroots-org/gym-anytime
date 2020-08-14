@@ -1,20 +1,38 @@
 <div class="container contin-custom">
     <div class="card"  >
-      <div class="card-header card-header-custom" ><h1>Login here...</h1></div>
+      <div class="card-header card-header-custom" ><h1>Login</h1></div>
        <div class="card-body" >
-           <form name="form"  >
-              <div class="form-group">
-                  <label class="label-style" for="phone number">phone number</label>
-                  <input type="text" class="form-control  input-custom" name="email"/>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Phone number</label>
+                <input type="text" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+                <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                    <div *ngIf="f.phoneNumber.errors.required">phone is required</div>
+                    <div *ngIf="f.phoneNumber.errors.pattern">invalid phone number</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sel1" >Choose user type</label>
+                 <select  class="form-control" formControlName="userType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userType.errors }">
+                  <option>user</option>
+                  <option>gym</option>
+                </select>
               </div>
-              <div class="form-group">
-                  <label class="label-style" for="password">password</label>
-                  <input type="password" class="form-control  input-custom" name="password"  />
+              <div [style.visibility]="spinnerVisible ?'visible':'hidden'" style="text-align:center;">
+                <div class="spinner-border"></div>
               </div>
-              <div class="form-group">
-                  <button type="submit" class="btn-custom" name="login" id="login">Login</button>
-              </div>
-           </form>     
+            <div class="form-group" [style.visibility]="btnVisible ?'visible':'hidden'">
+                <button type="submit" class="btn-custom" name="login" id="login">Submit</button>
+            </div>
+        </form>
        </div>
     </div>
   </div>
