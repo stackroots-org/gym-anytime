@@ -5,11 +5,11 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/gym-anytime'));
+app.use(express.static(__dirname + '/dist/gymplaner-front-end'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/dist/gym-anytime/index.html'));
+res.sendFile(path.join(__dirname+'/dist/gymplaner-front-end/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
