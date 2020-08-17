@@ -7,18 +7,18 @@
           <table class="table table-hover ">
             <thead>
               <tr>
-                <th></th>
                 <th>Name</th>
                 <th>Phone number</th>
-                <th>Sloat booked date</th>
+                <th>start time</th>
+                <th>end time</th>
               </tr>
             </thead>
             <tbody >
-              <tr >
-                <td></td>
-                <td><h5></h5></td>
-                <td></td>
-                <td></td>
+              <tr *ngFor="let i of slot ">
+                <td>{{i.userName}}</td>
+                <td>{{i.phoneNumber}}</td>
+                <td>{{convertTime(i.fromTime)}}</td>
+                <td>{{convertTime(i.toTime)}}</td>
               </tr>
       
             </tbody>

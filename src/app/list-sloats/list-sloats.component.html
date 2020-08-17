@@ -7,19 +7,21 @@
           <table class="table table-hover ">
             <thead>
               <tr>
-                <th></th>
                 <th>from time</th>
                 <th>to time</th>
                 <th>persons per sloat</th>
+                <!-- {{"18" | date:'mediumTime'}} -->
               </tr>
             </thead>
             <tbody >
-              <tr >
-                <td></td>
-                <td><h5></h5></td>
-                <td></td>
-                <td></td>
-                <td><button class="btn-custom" name="" id="delete">delete</button></td>
+              <tr *ngFor="let i of slotArr">
+                <td>{{convertTime(i.fromTime)}}</td>
+                <td>{{convertTime(i.toTime)}}</td>
+                <td>{{i.numberofToken}}</td>
+                <td><form  (ngSubmit)="onSubmit(i._id)">
+                  <button class="btn-custom" name="" id="delete">delete</button>
+                </form>
+                  </td>
               </tr>
       
             </tbody>

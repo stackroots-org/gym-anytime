@@ -7,18 +7,18 @@
           <table class="table table-hover ">
             <thead>
               <tr>
-                <th></th>
                 <th>Name</th>
                 <th>Phone number</th>
-                <th>Sloat booked date</th>
+                <th>password</th>
+                <th>slot booked date</th>
               </tr>
             </thead>
             <tbody >
-              <tr >
-                <td></td>
-                <td><h5></h5></td>
-                <td></td>
-                <td></td>
+               <tr *ngFor="let i of slotArr">
+                <td>{{i.userName}}</td>
+                <td>{{i.phoneNumber}}</td>
+                <td>{{i.password}}</td>
+                <td>{{i.slotBookedDate | date:'dd/MM/yyyy'}}</td>
               </tr>
       
             </tbody>

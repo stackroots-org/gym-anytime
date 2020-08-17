@@ -2,42 +2,68 @@
     <div class="card"  >
       <div class="card-header card-header-custom" ><h1>ADD A  SLOAT</h1></div>
        <div class="card-body" >
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <form  >
             <div class="form-group">
-                <label>Number of persons</label>
-                <input type="text" formControlName="persons" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.persons.errors }" />
-                <div *ngIf="submitted && f.persons.errors" class="invalid-feedback">
-                    <div *ngIf="f.persons.errors.required"> required</div>
-                </div>
+              <label >Perssons per slot</label>
+                <select class="form-control"  id="perPersons">
+                    <option value="select">select</option>
+                    <option *ngFor="let i of count" value="{{i}}" >{{i}}</option>
+                  </select>
             </div>
-            <!-- <div class="form-group">
-                <label for="Number persons">Persons per sloat</label>
-                <select class="form-control" id="sel1">
-                  <option>please select </option>
-                  <option>5</option>
-                  <option>10</option>
-                  <option>15</option>
-                  <option>20</option>
-                </select>
-              </div> -->
-              <div class="form-group">
-                <label>From time</label>
-                <input type="text" formControlName="from" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.from.errors }" />
-                <div *ngIf="submitted && f.from.errors" class="invalid-feedback">
-                    <div *ngIf="f.to.errors.required"> required</div>
-                </div>
-            </div>
-            <div class="form-group">
-              <label>To time</label>
-              <input type="text" formControlName="to" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.to.errors }" />
-              <div *ngIf="submitted && f.to.errors" class="invalid-feedback">
-                  <div *ngIf="f.to.errors.required"> required</div>
-              </div>
-           </div>
+             <div class="form-group">
+                <label >To time</label>
+                <div class="row" style="padding:2%;">
+                    <div class="col ">
+                        <select class="form-control"  id="ToHour">
+                            <option value="hour">hour</option>
+                            <option *ngFor="let i of hour" value="{{i}}">{{i}}</option>
+                          </select>
+                    </div>
+                    <div class="col ">
+                        <select class="form-control" id="ToMinute">
+                            <option value="minute">minute</option>
+                            <option *ngFor="let i of min" value="{{i}}" >{{i}}</option>
+                          </select>
+                    </div>
+                    <div class="col ">
+                        <select class="form-control" id="ToTimeReg">
+                            <option value="AM">AM</option>
+                             <option value="PM">PM</option>
+                          </select>
+                    </div>
+                  </div>
+             </div>
+             <div class="form-group">
+                <label >To time</label>
+                <div class="row" style="padding:2%;">
+                    <div class="col ">
+                      <select class="form-control"  id="FromHour">
+                        <option value="hour">hour</option>
+                        <option *ngFor="let i of hour" value="{{i}}">{{i}}</option>
+                      </select>
+                    </div>
+                    <div class="col ">
+                      <select class="form-control" id="FromMinute">
+                        <option value="minute">minute</option>
+                        <option *ngFor="let i of min" value="{{i}}" >{{i}}</option>
+                      </select>
+                    </div>
+                    <div class="col ">
+                        <select class="form-control" id="FromTimeReg">
+                            <option value="AM">AM</option>
+                             <option value="PM">PM</option>
+                          </select>
+                    </div>
+                  </div>  
+             </div>
                <div class="form-group">
-                <button type="submit" class="btn-custom" name="login" id="login">Create</button>
+                <button type="submit" class="btn-custom" (click)="onSubmit()">Create</button>
             </div>
         </form>
        </div>
     </div>
   </div>
+
+
+
+

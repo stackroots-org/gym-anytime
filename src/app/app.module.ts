@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import{FormsModule,ReactiveFormsModule} from '@angular/forms'
 import {HttpClientModule} from'@angular/common/http';
-
+import { StorageServiceModule } from 'ngx-webstorage-service';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -16,6 +17,9 @@ import { SloatCreationComponent } from './sloat-creation/sloat-creation.componen
 import { ListSloatsComponent } from './list-sloats/list-sloats.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { BookSloatComponent } from './book-sloat/book-sloat.component';
+import { LogOutComponent } from './log-out/log-out.component';
+import { ErrorComponent } from './error/error.component';
+import { AlreadyBookedComponent } from './already-booked/already-booked.component';
 
 
 @NgModule({
@@ -28,16 +32,21 @@ import { BookSloatComponent } from './book-sloat/book-sloat.component';
     SloatCreationComponent,
     ListSloatsComponent,
     BookingsComponent,
-    BookSloatComponent
+    BookSloatComponent,
+    LogOutComponent,
+    ErrorComponent,
+    AlreadyBookedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StorageServiceModule,
+    
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

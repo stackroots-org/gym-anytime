@@ -9,27 +9,27 @@
   
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav mr-auto ">
-        <li class="nav-item active ">
+        <ul *ngIf="loginStatus" class="navbar-nav mr-auto " >
+        <li *ngIf="userTye=='gym'" class="nav-item active ">
             <a class="nav-link text-white" routerLink="bookings" >Bookings<span class="sr-only"></span></a>
         </li>
-        <li class="nav-item active ">
+        <li *ngIf="userTye=='gym'" class="nav-item active ">
           <a class="nav-link text-white" routerLink="customers" >Members<span class="sr-only"></span></a>
         </li>
-        <li class="nav-item active ">
+        <li *ngIf="userTye=='gym'" class="nav-item active ">
           <a class="nav-link text-white" routerLink="new-addmission" >New Membership<span class="sr-only"></span></a>
         </li>
-        <li class="nav-item active ">
+        <li *ngIf="userTye=='gym'" class="nav-item active ">
           <a class="nav-link text-white" routerLink="sloats" > Sloats <span class="sr-only"></span></a>
         </li>
-        <li class="nav-item active ">
+        <li *ngIf="userTye=='gym'" class="nav-item active ">
           <a class="nav-link text-white" routerLink="create-sloats">Create Sloats <span class="sr-only"></span></a>
         </li>
-        <li class="nav-item active ">
+        <li *ngIf="userTye=='user'" class="nav-item active ">
           <a class="nav-link text-white" routerLink="book-sloat" >Book sloat<span class="sr-only"></span></a>
         </li>
-        <li class="nav-item active ">
-            <a class="nav-link text-white" href="#" >Logout<span class="sr-only"></span></a>
+        <li *ngIf="userTye=='gym' || userTye=='user'" class="nav-item active ">
+            <a class="nav-link text-white" routerLink="log-out">Logout<span class="sr-only"></span></a>
           </li>
     </ul>
     </div>
