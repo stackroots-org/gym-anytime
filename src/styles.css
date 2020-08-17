@@ -221,3 +221,6 @@ label{
 .select-time{
     width:100%;
 }
+.err-red{
+    color:red;
+}
