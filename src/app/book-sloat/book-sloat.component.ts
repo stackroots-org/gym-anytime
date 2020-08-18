@@ -28,8 +28,8 @@ export class BookSloatComponent implements OnInit {
    useArr=[]
    userId=this.serve.get_log_uId()
    hasError=true
-   
-   
+   hideStatus=true
+   date
    dateToday:any=this.serve.get_date_today()
 
 
@@ -51,22 +51,25 @@ export class BookSloatComponent implements OnInit {
          if(JSON.parse(JSON.stringify(data)).Status=="Success")
           {
             this.useData=data
+            this.date=this.useData.slotBookedDate
+            console.log("data"+data)
              console.log("booked date:"+this.useData.slotBookedDate)
              if(!this.useData.slotBookedDate)
              {
+               console.log("booked date not null")
                if(this.useData.slotBookedDate==this.serve.get_date_today())
                {
                 this.route.navigate(['already-booked'])
                }
                else
                {
-                this.get_slots()
+                this.hideStatus=false
                }
               
              }
              else
              {
-              this.get_slots()
+              this.hideStatus=false
              }
             
           }
@@ -76,26 +79,7 @@ export class BookSloatComponent implements OnInit {
           
       })
    }
-  get_slots()
-  {
-    ///console.log(this.slotCred)
-    this.serve.get_commen_gym_data(this.slotCred)
-    .subscribe((data)=>{
-       ////console.log(data)
-       if(JSON.parse(JSON.stringify(data)).Status=="Success")
-       {
-         this.gymData=data
-         ///console.log(this.gymData.Status)
-         this.slotArr=this.gymData.result.slots
-         //console.log(this.slotArr)
-       }
-       else
-       {
-         alert("something went wrong !!")
-       }
-    })
-    
-  }
+ 
   onSubmit(id)
   {
     
@@ -108,7 +92,7 @@ export class BookSloatComponent implements OnInit {
            if(JSON.parse(JSON.stringify(data)).Status=="Success")
            {
              alert("successfully booked !!")
-             this.route.navigate(['already-booked'])
+             this.hideStatus=false
            }
            else
            {

@@ -69,6 +69,8 @@ export class RegisterUserComponent implements OnInit {
       if(JSON.parse(JSON.stringify(data)).Status=="Success")
       {
         alert("new member added successfully :)")
+
+        this.route.navigate([''])
       }
       else if(JSON.parse(JSON.stringify(data)).Status=="user exists")
       {

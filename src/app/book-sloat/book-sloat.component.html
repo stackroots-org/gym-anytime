@@ -1,5 +1,5 @@
 <app-gym-name></app-gym-name>
-<div class="container contin-custom">
+<div class="container contin-custom" *ngIf="hideStatus">
     <div class="card">
         <div class="card-header card-header-custom">
          <h1>AVILABLE SLOATS</h1>
@@ -14,7 +14,7 @@
               </tr>
             </thead>
             <tbody >
-              <tr *ngFor="let i of slotArr">
+              <tr *ngFor="let i of useData.slots">
                 <td>{{i.fromTime}}</td>
                 <td>{{i.toTime }}</td>
                 <!-- <td><h1 [style.color]="((10-9)<=0)?'red':'green'">text</h1></td> -->
@@ -35,5 +35,14 @@
             </tbody>
           </table>
         </div>
+      </div>
+    </div>
+    <div class="container contin-custom"  *ngIf="!hideStatus">
+      <div class="card"  >
+         <div class="card-body" >
+          <div style="text-align:center;" >
+             <h1>you have booked already on {{date}} !! :)</h1>
+          </div>
+         </div>
       </div>
     </div>
