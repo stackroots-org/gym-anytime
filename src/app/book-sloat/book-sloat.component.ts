@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class BookSloatComponent implements OnInit {
 
-  constructor(public serve:GetDataServiceService,public route:Router) { }
+  constructor(public serve:GetDataServiceService,public route:Router) {
+   }
   slotCred={
     ownerId:this.serve.get_log_owner_id(),
     userType:"gym",
@@ -26,7 +27,7 @@ export class BookSloatComponent implements OnInit {
    useArr=[]
    userId=this.serve.get_log_uId()
    hasError=true
-  
+   i
    
    dateToday:any=this.serve.get_date_today()
 
@@ -50,13 +51,13 @@ export class BookSloatComponent implements OnInit {
             this.useData=data
             this.useArr=this.useData.users
            // console.log(this.useArr)
-            for (this.dateToday of this.useArr) 
+            for ( this.i of this.useArr) 
             {
                 //console.log(this.dt._id)   
-                if(this.dateToday._id==this.userId)
+                if(this.i._id==this.userId)
                 {
-                  console.log(this.dateToday.slotBookedDate)
-                  if(this.dateToday.slotBookedDate==this.dateToday)
+                  console.log(this.i.slotBookedDate)
+                  if(this.i.slotBookedDate==this.dateToday)
                   {
                     this.route.navigate(['already-booked'])
                   }

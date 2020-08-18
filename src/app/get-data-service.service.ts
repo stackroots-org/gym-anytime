@@ -38,6 +38,7 @@ export class GetDataServiceService {
   }
   create_slot(data)
   {
+     
     return this.httpObj.post("https://gymcenterbackend.herokuapp.com/gym/createslot",data)
   }
   book_slot(data)
@@ -63,14 +64,14 @@ export class GetDataServiceService {
   get_date()
   {
     let current_datetime = new Date()
-     let formatted_date = (current_datetime.getDate()-1)+ "/" + (current_datetime.getMonth()) + "/" + current_datetime.getFullYear()
+     let formatted_date = (current_datetime.getDate()-1)+ "/" + (current_datetime.getMonth()+1) + "/" + current_datetime.getFullYear()
      return formatted_date
   }
   get_date_today()
   {
     //varr
     let current_datetime = new Date()
-    let formatted_date = current_datetime.getDate() + "/" + (current_datetime.getMonth()) + "/" + current_datetime.getFullYear()
+    let formatted_date = current_datetime.getDate()+ "/" + (current_datetime.getMonth()+1) + "/" + current_datetime.getFullYear()
     return formatted_date;
   }
   time_converter(tm)
