@@ -38,7 +38,7 @@ export class BookingsComponent implements OnInit {
       
       ///console.log(this.datePipe.transform(Date.now(),'dd/MM/yyyy'))
        //this.dt=this.datePipe.transform(Date.now(),'dd/MM/yyyy')
-      this.dt="10/08/2020"
+      this.dt=new Date()
       this.bookCredentials.ownerId=this.serve.get_log_uId()
       this.bookCredentials.userType=this.serve.get_log_userType()
       this.bookCredentials.date=this.dt

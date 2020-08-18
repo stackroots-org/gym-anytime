@@ -18,7 +18,7 @@ export class BookSloatComponent implements OnInit {
     userType:this.serve.get_log_userType(),
     ownerId:this.serve.get_log_owner_id(),
     slotId:"",
-    date:"10/08/2020"
+    date:new Date()
    }
    slotArr=[]
    gymData
