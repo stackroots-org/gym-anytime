@@ -108,6 +108,7 @@ export class BookSloatComponent implements OnInit {
            if(JSON.parse(JSON.stringify(data)).Status=="Success")
            {
              alert("successfully booked !!")
+             this.route.navigate(['already-booked'])
            }
            else
            {
