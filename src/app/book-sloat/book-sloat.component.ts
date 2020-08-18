@@ -45,13 +45,13 @@ export class BookSloatComponent implements OnInit {
    book_status()
    {
      //console.log(this.slotCred)
-      this.serve.get_list_of_members(this.slotCred)
+      this.serve.get_user_info_with_book_status(this.slotCred)
       .subscribe((data)=>{
          ///console.log(data)
          if(JSON.parse(JSON.stringify(data)).Status=="Success")
           {
             this.useData=data
-           
+             console.log("booked date:"+this.useData.slotBookedDate)
              if(!this.useData.slotBookedDate)
              {
                if(this.useData.slotBookedDate==this.serve.get_date_today())
