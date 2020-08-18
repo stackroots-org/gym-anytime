@@ -18,7 +18,7 @@ export class BookSloatComponent implements OnInit {
     userType:this.serve.get_log_userType(),
     ownerId:this.serve.get_log_owner_id(),
     slotId:"",
-    date:new Date()
+    date:""
    }
    slotArr=[]
    gymData
@@ -26,9 +26,9 @@ export class BookSloatComponent implements OnInit {
    useArr=[]
    userId=this.serve.get_log_uId()
    hasError=true
-   dateToday:any=new Date()
-   //"2020-10-08T00:00:00.000Z"
-   dt
+   dateToday:any=this.serve.get_date()
+
+
   ngOnInit(): void {
      if(!this.serve.get_log_satus())
      {this.route.navigate([""])}
@@ -48,13 +48,13 @@ export class BookSloatComponent implements OnInit {
             this.useData=data
             this.useArr=this.useData.users
            // console.log(this.useArr)
-            for (this.dt of this.useArr) 
+            for (this.dateToday of this.useArr) 
             {
                 //console.log(this.dt._id)   
-                if(this.dt._id==this.userId)
+                if(this.dateToday._id==this.userId)
                 {
-                  console.log(this.dt.slotBookedDate)
-                  if(this.dt.slotBookedDate==this.dateToday)
+                  console.log(this.dateToday.slotBookedDate)
+                  if(this.dateToday.slotBookedDate==this.dateToday)
                   {
                     this.route.navigate(['already-booked'])
                   }

@@ -11,7 +11,7 @@ import { DatePipe } from '@angular/common';
 export class BookingsComponent implements OnInit {
 
   constructor(public serve:GetDataServiceService,public route:Router,private datePipe: DatePipe) { }
-      dt:any;
+        dateToday
        slot=[]
        userObj
        slotObj
@@ -38,15 +38,16 @@ export class BookingsComponent implements OnInit {
       
       ///console.log(this.datePipe.transform(Date.now(),'dd/MM/yyyy'))
        //this.dt=this.datePipe.transform(Date.now(),'dd/MM/yyyy')
-      this.dt=new Date()
+      this.dateToday=this.serve.get_date()
       this.bookCredentials.ownerId=this.serve.get_log_uId()
       this.bookCredentials.userType=this.serve.get_log_userType()
-      this.bookCredentials.date=this.dt
-      //console.log(this.bookCredentials)
+      this.bookCredentials.date=this.dateToday
+      console.log(this.bookCredentials)
 
+      
       this.serve.get_user_data(this.bookCredentials)
         .subscribe((data)=>{
-          ///console.log(data)
+          console.log(data)
            this.userObj=data
            this.slot=this.userObj.Users
            console.log(this.slot)

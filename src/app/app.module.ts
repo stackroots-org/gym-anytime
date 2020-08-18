@@ -20,6 +20,7 @@ import { BookSloatComponent } from './book-sloat/book-sloat.component';
 import { LogOutComponent } from './log-out/log-out.component';
 import { ErrorComponent } from './error/error.component';
 import { AlreadyBookedComponent } from './already-booked/already-booked.component';
+import { GymNameComponent } from './gym-name/gym-name.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AlreadyBookedComponent } from './already-booked/already-booked.componen
     BookSloatComponent,
     LogOutComponent,
     ErrorComponent,
-    AlreadyBookedComponent
+    AlreadyBookedComponent,
+    GymNameComponent
   ],
   imports: [
     BrowserModule,

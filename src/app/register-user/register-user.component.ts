@@ -33,7 +33,7 @@ export class RegisterUserComponent implements OnInit {
 
     this.registerForm = this.formBuilder.group({
       userName: ['', Validators.required],
-      phone: ['', [Validators.required,Validators.pattern(new RegExp("[0-9]{10}"))]],
+      phone: ['',[Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required]
         }, {

@@ -60,6 +60,12 @@ export class GetDataServiceService {
   {
     return this.storage.get('owner');
   }
+  get_date()
+  {
+    let current_datetime = new Date()
+     let formatted_date = (current_datetime.getDate()-1)+ "/" + (current_datetime.getMonth() -1) + "/" + current_datetime.getFullYear()
+     return formatted_date
+  }
   time_converter(tm)
   {
     var time,tmpHour,tmpMin,tmpFormat,newTime

@@ -35,8 +35,8 @@ export class LoginComponent implements OnInit {
              
        }
     this.loginForm = this.formBuilder.group({
-      password: ['', [Validators.required, Validators.minLength(2)]],
-      phoneNumber: ['', [Validators.required,Validators.pattern(new RegExp("[0-9]{10}"))]],
+      password: ['', [Validators.required, Validators.minLength(3)]],
+      phoneNumber: ['',[Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       userType: ['user', [Validators.required]]
 
   });
@@ -53,6 +53,8 @@ export class LoginComponent implements OnInit {
         return;
     }
      
+
+
     this.spinnerVisible=true;
     this.btnVisible=false;
     
@@ -60,7 +62,7 @@ export class LoginComponent implements OnInit {
      .subscribe((data)=>{   
         this.spinnerVisible=false;
         this.btnVisible=true;
-           //console.log(data)
+           console.log(this.loginForm)
          // console.log(JSON.parse(JSON.stringify(data)).Status)
          
           if(JSON.parse(JSON.stringify(data)).Status=="Success")
@@ -68,8 +70,7 @@ export class LoginComponent implements OnInit {
             alert("login success !!")
             
              this.userObj=data;
-            //  this.uID=this.userObj._id;
-            //  this.type=this.userObj.userType;
+            
             
             if(this.loginForm.value.userType=="gym")
             {
