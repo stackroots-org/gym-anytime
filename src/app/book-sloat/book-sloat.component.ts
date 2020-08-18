@@ -97,7 +97,7 @@ export class BookSloatComponent implements OnInit {
              alert("successfully booked !!")
              this.route.navigateByUrl('/',({skip-Location-Change:true}).
              then(()=>{
-                
+                this.route.navigate(['book-sloat'])
              })
              
            }
