@@ -63,9 +63,14 @@ export class GetDataServiceService {
   }
   get_date()
   {
-    let current_datetime = new Date()
-     let formatted_date = (current_datetime.getDate()-1)+ "/" + (current_datetime.getMonth()+1) + "/" + current_datetime.getFullYear()
-     return formatted_date
+    const today = new Date()
+    const yesterday = new Date(today)
+
+    yesterday.setDate(yesterday.getDate() - 1)
+
+    today.toDateString()
+      yesterday.toDateString()
+     return yesterday
   }
   get_date_today()
   {
