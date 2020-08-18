@@ -12,7 +12,7 @@ export class BookSloatComponent implements OnInit {
    }
   slotCred={
     ownerId:this.serve.get_log_owner_id(),
-    userType:"user",
+    userType:"gym",
     userId:this.serve.get_log_uId()
    } 
    bookCre={
@@ -57,20 +57,21 @@ export class BookSloatComponent implements OnInit {
              console.log("booked date:"+this.useData.slotBookedDate)
              if(!this.useData.slotBookedDate)
              {
+               this.hideStatus=true
                console.log("booked date not null")
-               if(this.useData.slotBookedDate==this.serve.get_date_today())
-               {
-                this.route.navigate(['already-booked'])
-               }
-               else
-               {
-                this.hideStatus=false
-               }
+              
               
              }
              else
              {
-              this.hideStatus=false
+                  if(this.useData.slotBookedDate==this.serve.get_date_today())
+                  {
+                    this.hideStatus=false
+                  }
+                  else
+                  {
+                  this.hideStatus=true
+                   }
              }
             
           }
@@ -94,11 +95,11 @@ export class BookSloatComponent implements OnInit {
            if(JSON.parse(JSON.stringify(data)).Status=="Success")
            {
              alert("successfully booked !!")
-             this.route.navigateByUrl("/,{skip-Location-Change:true}").
+             this.route.navigateByUrl('/',({skip-Location-Change:true}).
              then(()=>{
-                this.route.navigate(['book-sloat'])
+                
              })
-             this.hideStatus=false
+             
            }
            else
            {
