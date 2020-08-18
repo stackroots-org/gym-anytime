@@ -10,7 +10,7 @@
               <tr>
                 <th>from time</th>
                 <th>to time</th>
-                <th style="text-align: center;">availability</th>
+                <th style="text-align: center;">Status</th>
               </tr>
             </thead>
             <tbody >
@@ -18,10 +18,10 @@
                 <td>{{i.fromTime}}</td>
                 <td>{{i.toTime }}</td>
                 <!-- <td><h1 [style.color]="((10-9)<=0)?'red':'green'">text</h1></td> -->
-                <td>
-                  <h6 *ngIf='((i.availableToken)<=0) ; else elseBk'  style="color:white;background-color:red;text-align: center;">not avilable</h6>
+                <td style="padding:2px;border-radius:2px;">
+                  <h6 *ngIf='((i.availableToken)<=0) ; else elseBk'  style="color:white;background-color:red;text-align: center;">not available</h6>
                   <ng-template #elseBk>
-                    <h6 style="color:white;background-color:green;text-align: center;"> avilable</h6>
+                    <h6 style="color:white;background-color:green;text-align: center;"> available</h6>
                   </ng-template>
 
                 </td>

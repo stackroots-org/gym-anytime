@@ -13,6 +13,7 @@ export class BookSloatComponent implements OnInit {
   slotCred={
     ownerId:this.serve.get_log_owner_id(),
     userType:"gym",
+    userId:this.serve.get_log_uId()
    } 
    bookCre={
     userId:this.serve.get_log_uId(),
@@ -27,7 +28,7 @@ export class BookSloatComponent implements OnInit {
    useArr=[]
    userId=this.serve.get_log_uId()
    hasError=true
-   i
+   
    
    dateToday:any=this.serve.get_date_today()
 
@@ -50,29 +51,27 @@ export class BookSloatComponent implements OnInit {
          if(JSON.parse(JSON.stringify(data)).Status=="Success")
           {
             this.useData=data
-            this.useArr=this.useData.users
-           // console.log(this.useArr)
-            for ( this.i of this.useArr) 
-            {
-                //console.log(this.dt._id)   
-                if(this.i._id==this.userId)
-                {
-                  console.log(this.i.slotBookedDate)
-                  if(this.i.slotBookedDate==this.dateToday)
-                  {
-                    this.route.navigate(['already-booked'])
-                  }
-                  else
-                  {
-                    this.get_slots()
-                  }
-
-                }
-            }
+           
+             if(!this.useData.slotBookedDate)
+             {
+               if(this.useData.slotBookedDate==this.serve.get_date_today())
+               {
+                this.route.navigate(['already-booked'])
+               }
+               else
+               {
+                this.get_slots()
+               }
+              
+             }
+             else
+             {
+              this.get_slots()
+             }
             
           }
           else
-          {console.log("error found")}
+          {console.log("not found")}
            
           
       })

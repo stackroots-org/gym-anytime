@@ -45,6 +45,10 @@ export class GetDataServiceService {
   {
     return this.httpObj.post("https://gymcenterbackend.herokuapp.com/user/bookslot",data)
   }
+  get_user_info_with_book_status(data)
+  {
+    return this.httpObj.post("https://gymcenterbackend.herokuapp.com/user",data)
+  }
   get_log_satus()
   {
     return this.storage.get('key');
