@@ -12,7 +12,7 @@ export class BookSloatComponent implements OnInit {
    }
   slotCred={
     ownerId:this.serve.get_log_owner_id(),
-    userType:"gym",
+    userType:"user",
     userId:this.serve.get_log_uId()
    } 
    bookCre={
