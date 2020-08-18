@@ -51,6 +51,7 @@ export class BookSloatComponent implements OnInit {
          if(JSON.parse(JSON.stringify(data)).Status=="Success")
           {
             this.useData=data
+            this.slotArr=this.useData.slots
             this.date=this.useData.slotBookedDate
             console.log("data"+data)
              console.log("booked date:"+this.useData.slotBookedDate)
