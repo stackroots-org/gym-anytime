@@ -85,6 +85,7 @@ export class BookSloatComponent implements OnInit {
     
     this.bookCre.slotId=id
     ///console.log(this.serve.get_log_uId())
+   
     console.log(this.bookCre)
     this.serve.book_slot(this.bookCre)
      .subscribe((data)=>{
@@ -92,6 +93,10 @@ export class BookSloatComponent implements OnInit {
            if(JSON.parse(JSON.stringify(data)).Status=="Success")
            {
              alert("successfully booked !!")
+             this.route.navigateByUrl("/,{skip-Location-Change:true}").
+             then(()=>{
+                this.route.navigate(['book-sloat'])
+             })
              this.hideStatus=false
            }
            else
