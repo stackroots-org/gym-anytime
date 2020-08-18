@@ -69,7 +69,7 @@ export class GetDataServiceService {
   get_date_today()
   {
     let current_datetime = new Date()
-   let formatted_date =current_datetime.getDate() + "/" + (current_datetime.getMonth()) + "/" +current_datetime.getFullYear()
+   let formatted_date =current_datetime.getDate()+ "/" + (current_datetime.getMonth()) + "/" +current_datetime.getFullYear()
     return formatted_date;
   }
   time_converter(tm)
