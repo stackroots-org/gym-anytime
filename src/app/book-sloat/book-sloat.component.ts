@@ -26,7 +26,9 @@ export class BookSloatComponent implements OnInit {
    useArr=[]
    userId=this.serve.get_log_uId()
    hasError=true
-   dateToday:any=this.serve.get_date()
+  
+   
+   dateToday:any=this.serve.get_date_today()
 
 
   ngOnInit(): void {

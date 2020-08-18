@@ -66,6 +66,12 @@ export class GetDataServiceService {
      let formatted_date = (current_datetime.getDate()-1)+ "/" + (current_datetime.getMonth() -1) + "/" + current_datetime.getFullYear()
      return formatted_date
   }
+  get_date_today()
+  {
+    let current_datetime = new Date()
+   let formatted_date =current_datetime.getDate() + "/" + (current_datetime.getMonth()) + "/" +current_datetime.getFullYear()
+    return formatted_date;
+  }
   time_converter(tm)
   {
     var time,tmpHour,tmpMin,tmpFormat,newTime
