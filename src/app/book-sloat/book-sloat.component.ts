@@ -38,7 +38,8 @@ export class BookSloatComponent implements OnInit {
      ///this.get_slots()
       this.book_status()
      ///this.dateToday=new Date()
-     console.log(this.dateToday)
+     console.log("date today"+this.dateToday)
+     console.log("date yesterday"+this.dateToday)
   }
    book_status()
    {
