@@ -20,7 +20,9 @@ export class BookSloatComponent implements OnInit {
     userType:this.serve.get_log_userType(),
     ownerId:this.serve.get_log_owner_id(),
     slotId:"",
-    date:this.serve.get_date_today()
+    date:this.serve.get_date_today(),
+    fromTime:"",
+    toTime:""
    }
    slotArr=[]
    gymData
@@ -82,10 +84,12 @@ export class BookSloatComponent implements OnInit {
       })
    }
  
-  onSubmit(id)
+  onSubmit(id,from,to)
   {
     
     this.bookCre.slotId=id
+    this.bookCre.fromTime=from
+    this.bookCre.toTime=to
     ///console.log(this.serve.get_log_uId())
    
     console.log(this.bookCre)

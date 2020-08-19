@@ -19,7 +19,6 @@ import { BookingsComponent } from './bookings/bookings.component';
 import { BookSloatComponent } from './book-sloat/book-sloat.component';
 import { LogOutComponent } from './log-out/log-out.component';
 import { ErrorComponent } from './error/error.component';
-import { AlreadyBookedComponent } from './already-booked/already-booked.component';
 import { GymNameComponent } from './gym-name/gym-name.component';
 
 
@@ -36,7 +35,6 @@ import { GymNameComponent } from './gym-name/gym-name.component';
     BookSloatComponent,
     LogOutComponent,
     ErrorComponent,
-    AlreadyBookedComponent,
     GymNameComponent
   ],
   imports: [

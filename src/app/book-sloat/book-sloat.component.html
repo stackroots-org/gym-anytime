@@ -1,8 +1,12 @@
-<app-gym-name></app-gym-name>
+<div class="container contin-custom">
+  <div class="card"  >
+    <h1>welcome to {{useData.owner.gymName}}</h1>
+  </div>
+</div>
 <div class="container contin-custom" *ngIf="hideStatus">
     <div class="card">
         <div class="card-header card-header-custom">
-         <h1>AVILABLE SLOATS</h1>
+         <h1>AVAILABLE SLOTS</h1>
         </div>
         <div class="table-responsive">
           <table class="table table-hover ">
@@ -16,16 +20,15 @@
             <tbody >
               <tr *ngFor="let i of slotArr">
                 <td>{{i.fromTime}}</td>
-                <td>{{i.toTime }}</td>
+                <td>{{i.toTime}}</td>
                 <!-- <td><h1 [style.color]="((10-9)<=0)?'red':'green'">text</h1></td> -->
-                <td style="padding:2px;border-radius:2px;">
+                <td>
                   <h6 *ngIf='((i.availableToken)<=0) ; else elseBk'  style="color:white;background-color:red;text-align: center;">not available</h6>
                   <ng-template #elseBk>
                     <h6 style="color:white;background-color:green;text-align: center;"> available</h6>
                   </ng-template>
-
                 </td>
-                <td><form  (ngSubmit)="onSubmit(i._id)">
+                <td><form  (ngSubmit)="onSubmit(i._id,i.fromTime,i.toTime)">
                   <button class="btn-custom" *ngIf='!((i.availableToken)<=0)'>book</button>
                   <div class="btn-custom-disabled" *ngIf='((i.availableToken)<=0)'>book</div>
                 </form>

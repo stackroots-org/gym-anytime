@@ -9,11 +9,10 @@ import{LoginComponent} from './login/login.component'
 import{RegisterUserComponent} from './register-user/register-user.component'
 import {SloatCreationComponent} from './sloat-creation/sloat-creation.component'
 import { LogOutComponent } from './log-out/log-out.component';
-import{AlreadyBookedComponent} from './already-booked/already-booked.component'
 //new-addmission
 const routes: Routes = [{path:"",component:LoginComponent},{path:"bookings",component:BookingsComponent},{path:"customers",component:ListUserComponent},
 {path:"new-addmission",component:RegisterUserComponent},{path:"sloats",component:ListSloatsComponent},{path:"create-sloats",component:SloatCreationComponent}
-,{path:"book-sloat",component:BookSloatComponent},{path:"log-out",component:LogOutComponent},{path:"already-booked",component:AlreadyBookedComponent},{path:"**",component:ErrorComponent}];
+,{path:"book-sloat",component:BookSloatComponent},{path:"log-out",component:LogOutComponent},{path:"**",component:ErrorComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
