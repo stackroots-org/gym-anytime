@@ -1,4 +1,8 @@
-<app-gym-name></app-gym-name>
+<div class="container contin-custom">
+  <div class="card"  >
+    <h1>welcome to {{useData.owner.gymName}}</h1>
+  </div>
+</div>
 <div class="container contin-custom">
     <div class="card">
         <div class="card-header card-header-custom">
@@ -10,12 +14,16 @@
               <tr>
                 <th>Name</th>
                 <th>Phone number</th>
+                <th>From time</th>
+                <th>To time</th>
               </tr>
             </thead>
             <tbody >
               <tr *ngFor="let i of slot ">
                 <td>{{i.userName}}</td>
                 <td>{{i.phoneNumber}}</td>
+                <td>{{i.fromTime}}</td>
+                <td>{{i.toTime}}</td>
               </tr>
             </tbody>
           </table>
