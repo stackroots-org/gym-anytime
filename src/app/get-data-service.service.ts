@@ -14,40 +14,40 @@ export class GetDataServiceService {
   login_user(data)
   {
     console.log(data)
-     return this.httpObj.post("https://gymcenterbackend.herokuapp.com/login",data)
+     return this.httpObj.post("https://gymbackend.herokuapp.com/login",data)
 
   }
   get_user_data(data){
-    return this.httpObj.post("https://gymcenterbackend.herokuapp.com/gym/slotdata",data)
+    return this.httpObj.post("https://gymbackend.herokuapp.com/gym/slotdata",data)
   }
   register_member(data)
   {
-     return this.httpObj.post("https://gymcenterbackend.herokuapp.com/gym/registeruser",data)
+     return this.httpObj.post("https://gymbackend.herokuapp.com/gym/registeruser",data)
   }
   get_list_of_members(data)
   {
-     return this.httpObj.post("https://gymcenterbackend.herokuapp.com/gym/listusers",data)
+     return this.httpObj.post("https://gymbackend.herokuapp.com/gym/listusers",data)
   }
   get_commen_gym_data(data)
   {
-    return this.httpObj.post("https://gymcenterbackend.herokuapp.com/gym",data)
+    return this.httpObj.post("https://gymbackend.herokuapp.com/gym",data)
   }
   delete_slot(data)
   {
-    return this.httpObj.post("https://gymcenterbackend.herokuapp.com/gym/deleteslot",data)
+    return this.httpObj.post("https://gymbackend.herokuapp.com/gym/deleteslot",data)
   }
   create_slot(data)
   {
      
-    return this.httpObj.post("https://gymcenterbackend.herokuapp.com/gym/createslot",data)
+    return this.httpObj.post("https://gymbackend.herokuapp.com/gym/createslot",data)
   }
   book_slot(data)
   {
-    return this.httpObj.post("https://gymcenterbackend.herokuapp.com/user/bookslot",data)
+    return this.httpObj.post("https://gymbackend.herokuapp.com/user/bookslot",data)
   }
   get_user_info_with_book_status(data)
   {
-    return this.httpObj.post("https://gymcenterbackend.herokuapp.com/user",data)
+    return this.httpObj.post("https://gymbackend.herokuapp.com/user",data)
   }
   get_log_satus()
   {
