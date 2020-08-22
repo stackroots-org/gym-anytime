@@ -15,8 +15,8 @@
             </thead>
             <tbody >
               <tr *ngFor="let i of slotArr">
-                <td>{{convertTime(i.fromTime)}}</td>
-                <td>{{convertTime(i.toTime)}}</td>
+                <td>{i.fromTime}}</td>
+                <td>{i.toTime)}</td>
                 <td>{{i.numberofToken}}</td>
                 <td><form  (ngSubmit)="onSubmit(i._id)">
                   <button class="btn-custom" name="" id="delete">delete</button>
